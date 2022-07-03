@@ -1,5 +1,5 @@
 import { Box } from '@chakra-ui/layout'
-import Sidebar from './Sidebar'
+import Sidebar from './sidebar/Sidebar'
 import PlayerBar from './PlayerBar'
 
 const PlayerLayout = ({ children }) => {

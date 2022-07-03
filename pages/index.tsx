@@ -1,6 +1,6 @@
 import { Box, Text, Flex } from '@chakra-ui/layout'
 import Image from 'next/image'
-import bart from '../images/bart.png'
+import bart from '../public/images/bart.png'
 
 const Home = () => {
   return (
