@@ -1,0 +1,26 @@
+/* sidebar */
+.side-wrapper {
+    width: 100%;
+    height: calc(100vh - 100px);
+    padding: 0 .25rem;
+}
+
+.side_inner-wrapper {
+    padding: 1rem 0;
+    height: 100%;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.side-divider {
+    margin: 1rem 0;
+}
+
+/* main-content */
+
+/* footer */
