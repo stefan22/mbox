@@ -3,44 +3,105 @@ import Image from 'next/image'
 import bart from '../public/images/bart.png'
 
 const Home = () => {
-  return (
-    <Box
-      color="white"
-      paddingX="40px"
-    >
-      <Box marginBottom="40px">
-        <Text
-          fontSize="2xl"
-          fontWeight="bold"
-        >
-          Top artist this month
-        </Text>
-        <Text fontSize="md">Artist</Text>
-      </Box>
-      <Flex>
-        <Box
-          paddingX="10px"
-          width="20%"
-        >
-          <Box
-            bg="gray.900"
-            borderRadius="4px"
-            padding="15px"
-            width="100%"
-          >
-            <Image
-              src={bart}
-              alt="Bart"
-            />
-            <Box marginTop="20px">
-              <Text fontSize="large">Artist name</Text>
-              <Text fontSize="x-small">Bart Simpson</Text>
+   return (
+      <Box className="main-content__section" color="white" paddingX="40px">
+         <Box className="section__heading">
+            <Text fontSize="3xl" fontWeight="bold" color="gray.900">
+               Top artist this month
+            </Text>
+         </Box>
+         <Flex className="section__artists">
+            <Box className="artist-card">
+               <Image src={bart} alt="Bart" />
+               <Box className="artist-card__info" marginTop="10px">
+                  <Text color="gray.900" fontSize="large">
+                     Artist name
+                  </Text>
+                  <Text color="white" fontSize="small">
+                     Bart Simpson
+                  </Text>
+               </Box>
             </Box>
-          </Box>
-        </Box>
-      </Flex>
-    </Box>
-  )
+            <Box className="artist-card">
+               <Image src={bart} alt="Bart" />
+               <Box className="artist-card__info" marginTop="10px">
+                  <Text color="gray.900" fontSize="large">
+                     Artist name
+                  </Text>
+                  <Text color="white" fontSize="small">
+                     Bart Simpson
+                  </Text>
+               </Box>
+            </Box>
+            <Box className="artist-card">
+               <Image src={bart} alt="Bart" />
+               <Box className="artist-card__info" marginTop="10px">
+                  <Text color="gray.900" fontSize="large">
+                     Artist name
+                  </Text>
+                  <Text color="white" fontSize="small">
+                     Bart Simpson
+                  </Text>
+               </Box>
+            </Box>
+            <Box className="artist-card">
+               <Image src={bart} alt="Bart" />
+               <Box className="artist-card__info" marginTop="10px">
+                  <Text color="gray.900" fontSize="large">
+                     Artist name
+                  </Text>
+                  <Text color="white" fontSize="small">
+                     Bart Simpson
+                  </Text>
+               </Box>
+            </Box>
+            <Box className="artist-card">
+               <Image src={bart} alt="Bart" />
+               <Box className="artist-card__info" marginTop="10px">
+                  <Text color="gray.900" fontSize="large">
+                     Artist name
+                  </Text>
+                  <Text color="white" fontSize="small">
+                     Bart Simpson
+                  </Text>
+               </Box>
+            </Box>
+            <Box className="artist-card">
+               <Image src={bart} alt="Bart" />
+               <Box className="artist-card__info" marginTop="10px">
+                  <Text color="gray.900" fontSize="large">
+                     Artist name
+                  </Text>
+                  <Text color="white" fontSize="small">
+                     Bart Simpson
+                  </Text>
+               </Box>
+            </Box>
+            <Box className="artist-card">
+               <Image src={bart} alt="Bart" />
+               <Box className="artist-card__info" marginTop="10px">
+                  <Text color="gray.900" fontSize="large">
+                     Artist name
+                  </Text>
+                  <Text color="white" fontSize="small">
+                     Bart Simpson
+                  </Text>
+               </Box>
+            </Box>
+            <Box className="artist-card">
+               <Image src={bart} alt="Bart" />
+               <Box className="artist-card__info" marginTop="10px">
+                  <Text color="gray.900" fontSize="large">
+                     Artist name
+                  </Text>
+                  <Text color="white" fontSize="small">
+                     Bart Simpson
+                  </Text>
+               </Box>
+            </Box>
+         </Flex>
+      </Box>
+   )
 }
 
 export default Home

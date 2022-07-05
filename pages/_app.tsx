@@ -4,13 +4,13 @@ import Theme from '../components/Theme'
 import '../styles/global.css'
 
 const App = ({ Component, pageProps }) => {
-  return (
-    <ChakraProvider theme={Theme}>
-      <PlayerLayout>
-        <Component {...pageProps} />
-      </PlayerLayout>
-    </ChakraProvider>
-  )
+   return (
+      <ChakraProvider theme={Theme}>
+         <PlayerLayout>
+            <Component {...pageProps} />
+         </PlayerLayout>
+      </ChakraProvider>
+   )
 }
 
 export default App
