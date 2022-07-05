@@ -3,29 +3,26 @@ import jwt from 'jsonwebtoken'
 import cookie from 'cookie'
 import prisma from '../../lib/db'
 
-const Signup = async (req, res) => {
-   const { email, password, firstName, lastName } = req.body
-   const salt = bcrypt.genSaltSync()
+export default async (req, res) => {
+   const { email, password } = req.body
 
-   const result = await prisma.user.create({
-      data: {
-         ...req.body,
-         firstName,
-         lastName,
+   const user = await prisma.user.findUnique({
+      where: {
          email,
-         password: bcrypt.hashSync(password, salt),
       },
    })
 
-   try {
+   if (user && bcrypt.compareSync(password, user.password)) {
       const token = jwt.sign(
          {
-            email,
-            id: result.id,
+            id: user.id,
+            email: user.email,
             time: Date.now(),
          },
          'SECRET',
-         { expiresIn: '8h' }
+         {
+            expiresIn: '8h',
+         }
       )
 
       res.setHeader(
@@ -38,13 +35,10 @@ const Signup = async (req, res) => {
             secure: process.env.NODE_ENV === 'production',
          })
       )
-   } catch (err) {
+      res.status(200)
+      res.json(user)
+   } else {
       res.status(401)
-      res.json({ error: err })
+      res.json({ error: 'Email or Password is wrong' })
    }
-
-   res.status(200)
-   return res.json(result)
 }
-
-export default Signup
