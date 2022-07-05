@@ -4,33 +4,13 @@ import { Box, List, ListItem, LinkOverlay, LinkBox, ListIcon, Divider, Text, Fle
 import bart from '../../public/images/bart.png'
 import { navMenu, musicMenu } from './sideMenuRoutes'
 
-const playlists = new Array(10).fill(1).map((_, i) => {
-   return (
-      <Text
-         key={i}
-         color="gray.500"
-         align="left"
-         paddingX="3rem">
-         {`Playlist ${i + 1}`}
-      </Text>
-   )
-})
-
 const Sidebar = () => {
    return (
       <Box className="side-wrapper">
          <Box className="side_inner-wrapper">
             <Box className="logo">
-               <Flex
-                  display="flex"
-                  justifyContent="flex-start"
-                  width="100%">
-                  <NextImage
-                     src={bart}
-                     height={38}
-                     width={30}
-                     alt="Bart"
-                  />{' '}
+               <Flex display="flex" justifyContent="flex-start" width="100%">
+                  <NextImage src={bart} height={38} width={30} alt="Bart" />{' '}
                   <Text
                      ml={2}
                      textTransform="uppercase"
@@ -52,15 +32,9 @@ const Sidebar = () => {
                      fontSize="16px"
                      key={menu.name}>
                      <LinkBox>
-                        <NextLink
-                           href={menu.route}
-                           passHref>
+                        <NextLink href={menu.route} passHref>
                            <LinkOverlay>
-                              <ListIcon
-                                 as={menu.icon}
-                                 color="gray.500"
-                                 marginRight="20px"
-                              />
+                              <ListIcon as={menu.icon} color="gray.500" marginRight="20px" />
                               {menu.name}
                            </LinkOverlay>
                         </NextLink>
@@ -68,10 +42,7 @@ const Sidebar = () => {
                   </ListItem>
                ))}
             </List>
-            <Divider
-               className="side-divider"
-               color="gray.500"
-            />
+            <Divider className="side-divider" color="gray.500" />
             <List spacing={2}>
                {musicMenu().map(menu => (
                   <ListItem
@@ -81,15 +52,9 @@ const Sidebar = () => {
                      color="gray.600"
                      key={menu.name}>
                      <LinkBox>
-                        <NextLink
-                           href={menu.route}
-                           passHref>
+                        <NextLink href={menu.route} passHref>
                            <LinkOverlay>
-                              <ListIcon
-                                 as={menu.icon}
-                                 color="gray.500"
-                                 marginRight="20px"
-                              />
+                              <ListIcon as={menu.icon} color="gray.500" marginRight="20px" />
                               {menu.name}
                            </LinkOverlay>
                         </NextLink>
@@ -97,10 +62,7 @@ const Sidebar = () => {
                   </ListItem>
                ))}
             </List>
-            <Divider
-               className="side-divider"
-               color="gray.500"
-            />
+            <Divider className="side-divider" color="gray.500" />
             <List spacing={2}>
                {musicMenu().map(menu => (
                   <ListItem
@@ -110,15 +72,9 @@ const Sidebar = () => {
                      color="gray.600"
                      key={menu.name}>
                      <LinkBox>
-                        <NextLink
-                           href={menu.route}
-                           passHref>
+                        <NextLink href={menu.route} passHref>
                            <LinkOverlay>
-                              <ListIcon
-                                 as={menu.icon}
-                                 color="gray.500"
-                                 marginRight="20px"
-                              />
+                              <ListIcon as={menu.icon} color="gray.500" marginRight="20px" />
                               {menu.name}
                            </LinkOverlay>
                         </NextLink>
@@ -126,11 +82,7 @@ const Sidebar = () => {
                   </ListItem>
                ))}
             </List>
-            <Divider
-               className="side-divider"
-               color="gray.500"
-            />
-            <List spacing={2}>{playlists}</List>
+            <Divider className="side-divider" color="gray.500" />
          </Box>
       </Box>
    )
