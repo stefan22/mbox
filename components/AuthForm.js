@@ -1,14 +1,14 @@
-import { Box, Flex, Input, Button } from '@chakra-ui/react'
+import { Box, Flex, Text, Input, Button } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-//  import { useSWRConfig } from 'swr'
 import NextImage from 'next/image'
 import { authFn } from '../lib/auth/authFn'
+import vinyl from '../public/images/vinyl.jpeg'
 
 const AuthForm = ({ mode }) => {
    const [email, setEmail] = useState('')
    const [password, setPassword] = useState('')
-   const [isLoading, setILoading] = useState(false)
+   const [isLoading, setIsLoading] = useState(false)
    const router = useRouter()
    const [firstName, setFirstName] = useState(undefined)
    const [lastName, setLastName] = useState(undefined)
@@ -35,29 +35,42 @@ const AuthForm = ({ mode }) => {
 
    const handleSubmit = async e => {
       e.preventDefault()
-      setILoading(true)
+      setIsLoading(true)
 
       if (mode === 'signin') {
          await authFn(mode, { email, password })
-         setILoading(false)
+         setIsLoading(false)
          router.push('/')
       }
 
       if (mode === 'signup') {
          await authFn(mode, { email, password, firstName, lastName })
-         setILoading(false)
+         setIsLoading(false)
          router.push('/')
       }
    }
 
    return (
-      <Box height="100vh" width="100vw" bg="black" color="white">
-         <Flex justify="center" align="center" height="100px" borderBottom="white 1px solid">
-            <NextImage src="/logo.svg" height={60} width={120} />
+      <Box className="inner-wrapper" height="100vh" width="100vw" color="gray.900">
+         <Flex
+            color="gray.900"
+            justify="left"
+            align="center"
+            height="100px"
+            borderBottom="black 1px solid"
+            padding="0 1rem"
+         >
+            <NextImage src={vinyl} height={60} width={60} />
+            <Text className="page-heading" fontSize="2xl">
+               Header
+            </Text>
          </Flex>
-         <Flex justify="center" align="center" height="calc(100vh - 100px)">
-            <Box padding="50px" bg="gray.900" borderRadius="6px">
-               <form onSubmit={handleSubmit}>
+
+         <Flex className="form-wrapper" justify="center" align="center" height="calc(75vh)">
+            <Text fontSize="2xl">{mode === 'signup' ? 'New Users' : 'Welcome back'}</Text>
+
+            <Box padding="50px" border="1px solid gray " borderRadius="4px">
+               <form id="user-form" onSubmit={handleSubmit}>
                   {mode === 'signup' && (
                      <>
                         <Input
@@ -84,7 +97,8 @@ const AuthForm = ({ mode }) => {
                   />
                   <Button
                      type="submit"
-                     bg="green.500"
+                     bg="gray.900"
+                     color="white"
                      isLoading={isLoading}
                      sx={{
                         '&:hover': {
