@@ -83,6 +83,28 @@ const Sidebar = () => {
                ))}
             </List>
             <Divider className="side-divider" color="gray.500" />
+            <List spacing={2}>
+               <ListItem paddingX="20px" fontSize="16px" className="sidenav-links" color="gray.600">
+                  <LinkBox>
+                     <NextLink href="/signin" passHref>
+                        <LinkOverlay>
+                           <ListIcon color="gray.500" marginRight="20px" />
+                           Signin
+                        </LinkOverlay>
+                     </NextLink>
+                  </LinkBox>
+               </ListItem>
+               <ListItem paddingX="20px" fontSize="16px" className="sidenav-links" color="gray.600">
+                  <LinkBox>
+                     <NextLink href="/signup" passHref>
+                        <LinkOverlay>
+                           <ListIcon color="gray.500" marginRight="20px" />
+                           Signup
+                        </LinkOverlay>
+                     </NextLink>
+                  </LinkBox>
+               </ListItem>
+            </List>
          </Box>
       </Box>
    )
