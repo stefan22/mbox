@@ -44,7 +44,7 @@ const Signup = async (req, res) => {
    }
 
    res.status(200)
-   return res.json(result)
+   res.json(result)
 }
 
 export default Signup

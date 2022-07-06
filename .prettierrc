@@ -10,5 +10,5 @@
   "jsxSingleQuote": false,
   "arrowParens": "avoid",
   "htmlWhitespaceSensitivity": "strict",
-  "bracketSameLine": true
+  "bracketSameLine": false
 }
