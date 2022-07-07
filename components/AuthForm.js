@@ -102,7 +102,7 @@ const AuthForm = ({ mode }) => {
                      isLoading={isLoading}
                      sx={{
                         '&:hover': {
-                           bg: 'green.300',
+                           bg: 'red.600',
                         },
                      }}
                   >
