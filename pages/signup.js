@@ -1,7 +1,7 @@
-import AuthForm from "../components/AuthForm"
 import { useState } from "react"
-import { authFn } from "../lib/auth/authFn"
 import { useRouter } from "next/router"
+import AuthForm from "../components/AuthForm"
+import { authFn } from "../lib/auth/authFn"
 
 const Signup = () => {
     const router = useRouter()
@@ -31,12 +31,10 @@ const Signup = () => {
             default:
                 break
         }
-        return
     }
 
     const handleSubmit = async e => {
         e.preventDefault()
-        console.log(firstName, lastName, email, password, isLoading, error, " and  mode", mode)
         setIsLoading(true)
         setError(false)
         if (mode === "signup") {

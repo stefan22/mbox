@@ -3,6 +3,15 @@ import jwt from "jsonwebtoken"
 import cookie from "cookie"
 import prisma from "../../lib/db"
 
+/*
+ *  @fn signup - handles the signup of a user
+ * @param {string} email - user email
+ * @param {string} password - user password
+ * @param {string} firstName - user firstName
+ * @param {string} lastName - user lastName
+ * @returns {Promise} - promise object with user data
+ */
+
 export default async (req, res) => {
     const { email, password, firstName, lastName } = req.body
     const salt = bcrypt.genSaltSync()

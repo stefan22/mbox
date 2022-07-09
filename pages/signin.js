@@ -1,7 +1,7 @@
-import AuthForm from "../components/AuthForm"
 import { useState } from "react"
-import { authFn } from "../lib/auth/authFn"
 import { useRouter } from "next/router"
+import AuthForm from "../components/AuthForm"
+import { authFn } from "../lib/auth/authFn"
 
 const Signin = () => {
     const router = useRouter()
@@ -23,7 +23,6 @@ const Signin = () => {
             default:
                 break
         }
-        return
     }
 
     const handleSubmit = async e => {

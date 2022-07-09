@@ -3,6 +3,13 @@ import jwt from "jsonwebtoken"
 import cookie from "cookie"
 import prisma from "../../lib/db"
 
+/*
+ * @fn signin - handles the signin of a user
+ * @param {string} email - user email
+ * @param {string} password - user password
+ * @returns {Promise} - promise object with user data
+ */
+
 export default async (req, res) => {
     const { email, password } = req.body
 

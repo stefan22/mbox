@@ -2,8 +2,13 @@ import { Box, Flex, Text, Input, Button } from "@chakra-ui/react"
 import NextImage from "next/image"
 import vinyl from "../public/images/vinyl.jpeg"
 
+/*
+ * @fn AuthForm: user authentication form
+ * @param {object}  props passed from the parent component
+ * @returns {JSX} - JSX  component
+ */
+
 const AuthForm = ({
-    router,
     email,
     password,
     isLoading,

@@ -1,6 +1,7 @@
 import { LinkBox, LinkOverlay, List, ListIcon, ListItem } from "@chakra-ui/layout"
 import NextLink from "next/link"
 import { playSongs } from "./sideMenuRoutes"
+
 const playlists = [
     { id: 1, name: "Playlist 1" },
     { id: 2, name: "Playlist 2" },
