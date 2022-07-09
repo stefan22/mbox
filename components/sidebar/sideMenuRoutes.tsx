@@ -1,34 +1,76 @@
-import { MdFavorite, MdHome, MdLibraryMusic, MdPlaylistAdd, MdSearch } from 'react-icons/md'
+import {
+    MdFavorite,
+    MdHome,
+    MdLibraryMusic,
+    MdPlaylistAdd,
+    MdSearch,
+    MdFeaturedPlayList,
+    MdLogin,
+    MdLogout,
+    MdAssignmentInd,
+} from "react-icons/md"
 
 const navMenu = () => [
-   {
-      name: 'Home',
-      icon: MdHome,
-      route: '/',
-   },
-   {
-      name: 'Search',
-      icon: MdSearch,
-      route: '/search',
-   },
-   {
-      name: 'Your Library',
-      icon: MdLibraryMusic,
-      route: '/library',
-   },
+    {
+        name: "Home",
+        icon: MdHome,
+        route: "/",
+    },
+    {
+        name: "Search",
+        icon: MdSearch,
+        route: "/search",
+    },
+
+    {
+        name: "Favorites",
+        icon: MdFavorite,
+        route: "/favorites",
+    },
+    {
+        name: " Library",
+        icon: MdLibraryMusic,
+        route: "/library",
+    },
 ]
 
 const musicMenu = () => [
-   {
-      name: 'Create Playlist',
-      icon: MdPlaylistAdd,
-      route: '/',
-   },
-   {
-      name: 'Favorites',
-      icon: MdFavorite,
-      route: '/favorites',
-   },
+    {
+        name: "Create Playlist",
+        icon: MdPlaylistAdd,
+        route: "/playlists",
+    },
+    {
+        name: "Favorites",
+        icon: MdFavorite,
+        route: "/favorites",
+    },
 ]
 
-export { navMenu, musicMenu }
+const playSongs = () => [
+    {
+        name: "Play Songs",
+        icon: MdFeaturedPlayList,
+        route: "/playlists",
+    },
+]
+
+const userAccounts = () => [
+    {
+        name: "Signin",
+        icon: MdLogin,
+        route: "/signin",
+    },
+    {
+        name: "Signout",
+        icon: MdLogout,
+        route: "/signout",
+    },
+    {
+        name: "Signup",
+        icon: MdAssignmentInd,
+        route: "/signup",
+    },
+]
+
+export { navMenu, musicMenu, playSongs, userAccounts }
