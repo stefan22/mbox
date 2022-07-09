@@ -34,7 +34,6 @@
 }
 
 /* main-content */
-
 .main-content {
     display: flex;
     width: 100%;
@@ -120,6 +119,7 @@
 .form-wrapper p {
     margin-bottom: 2rem;
 }
+
 #user-form {
     display: flex;
     flex-direction: column;

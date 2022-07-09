@@ -1,5 +1,10 @@
 import { Box, Flex, Stat, StatLabel, StatNumber, useColorModeValue } from "@chakra-ui/react"
 
+/*
+ * @fn StatsCard: stats card component
+ * @param {object}  props passed from the parent component
+ * @returns {JSX} - JSX  component
+ */
 const StatsCard = props => {
     const { title, stat, icon } = props
     return (

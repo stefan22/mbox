@@ -1,69 +1,24 @@
 import { Box, Flex, Text, Input, Button } from "@chakra-ui/react"
-import { useRouter } from "next/router"
-import { useState } from "react"
 import NextImage from "next/image"
-import { authFn } from "../lib/auth/authFn"
 import vinyl from "../public/images/vinyl.jpeg"
 
-const AuthForm = ({ mode }) => {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [isLoading, setIsLoading] = useState(false)
-    const router = useRouter()
-    const [firstName, setFirstName] = useState(undefined)
-    const [lastName, setLastName] = useState(undefined)
-    const [error, setError] = useState(false)
-    const handleName = e => {
-        const { name, value } = e.target
-        switch (name) {
-            case "firstName":
-                setFirstName(value)
-                break
-            case "lastName":
-                setLastName(value)
-                break
-            case "email":
-                setEmail(value)
-                break
-            case "password":
-                setPassword(value)
-                break
-            default:
-                break
-        }
-    }
+/*
+ * @fn AuthForm: user authentication form
+ * @param {object}  props passed from the parent component
+ * @returns {JSX} - JSX  component
+ */
 
-    const handleSubmit = async e => {
-        e.preventDefault()
-        setIsLoading(true)
-        setError(false)
-        if (mode === "signin") {
-            const statusCode = await authFn(mode, { email, password })
-            if (statusCode !== 200) {
-                setError(true)
-                router.push("/signin")
-            }
-            setIsLoading(false)
-            setEmail("")
-            setPassword("")
-            router.push("/")
-        }
-        if (mode === "signup") {
-            const status = await authFn(mode, { email, password, firstName, lastName })
-            if (status !== 200) {
-                setError(true)
-                setIsLoading(false)
-                return router.push("/signup")
-            }
-            setIsLoading(false)
-            setEmail("")
-            setPassword("")
-            setFirstName("")
-            setLastName("")
-            router.push("/")
-        }
-    }
-
+const AuthForm = ({
+    email,
+    password,
+    isLoading,
+    firstName,
+    lastName,
+    error,
+    mode,
+    handleName,
+    handleSubmit,
+}) => {
     return (
         <Box className="inner-wrapper" height="100vh" width="100vw" color="gray.900">
             <Flex
@@ -92,7 +47,6 @@ const AuthForm = ({ mode }) => {
                                     value={firstName}
                                     placeholder="firstname"
                                     type="text"
-                                    required
                                     onChange={e => handleName(e)}
                                 />
                                 <Input

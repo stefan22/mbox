@@ -27,12 +27,17 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Routes configuration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [/](/) - the home page or http://localhost:3000/
+- [/api/hello](/api/hello) - an API route or http://localhost:3000/api/hello
+- [/api/hello/:name](/api/hello/:name) - an API route with a parameter.
 
-### Other
+
+## Prisma DB
+[DATA] Heroku  with Prisma DB  -  .env file not included in this repository.
+See how to create a new project with Prisma DB ORM in the [Next.js documentation](https://nextjs.org/docs/basic-features/databases/prisma).
+
 
 - nextjs, react, prisma , signup, signin, jwtoken, http-pie, postman

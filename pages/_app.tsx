@@ -6,9 +6,13 @@ import "../styles/global.css"
 const App = ({ Component, props }) => {
     return (
         <ChakraProvider theme={Theme}>
-            <PlayerLayout>
+            {Component.authPage ? (
                 <Component {...props} />
-            </PlayerLayout>
+            ) : (
+                <PlayerLayout>
+                    <Component {...props} />
+                </PlayerLayout>
+            )}
         </ChakraProvider>
     )
 }

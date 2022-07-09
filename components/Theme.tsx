@@ -1,5 +1,10 @@
 import { extendTheme } from "@chakra-ui/react"
 
+/*
+ * @fn Theme - Extend theme component
+ * @param {Object} theme - Theme object
+ * @returns {Object} - Extended theme object
+ */
 const Theme = extendTheme({
     styles: {
         global: {

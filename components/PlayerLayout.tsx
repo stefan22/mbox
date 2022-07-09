@@ -1,6 +1,12 @@
 import { Box } from "@chakra-ui/layout"
 import Sidebar from "./sidebar/Sidebar"
 
+/*
+ * @fn PlayerLayout - PlayerLayout component
+ * @param {Component} Component - Component to be wrapped
+ * @param {Object} props - Component props
+ * @returns {Component} - Wrapped component
+ */
 const PlayerLayout = ({ children }) => {
     return (
         <Box className="main-wrapper" width="100vw" height="100vh">
