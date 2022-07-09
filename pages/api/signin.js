@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken"
 import cookie from "cookie"
 import prisma from "../../lib/db"
 
-const Signin = async (req, res) => {
+export default async (req, res) => {
     const { email, password } = req.body
 
     const user = await prisma.user.findUnique({
@@ -21,7 +21,7 @@ const Signin = async (req, res) => {
             },
             "SECRET",
             {
-                expiresIn: "8h",
+                expiresIn: "4h",
             }
         )
 
@@ -35,12 +35,10 @@ const Signin = async (req, res) => {
                 secure: process.env.NODE_ENV === "production",
             })
         )
-        res.status(200)
+
         res.json(user)
     } else {
         res.status(401)
         res.json({ error: "Email or Password is wrong" })
     }
 }
-
-export default Signin
