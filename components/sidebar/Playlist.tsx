@@ -1,17 +1,15 @@
 import { LinkBox, LinkOverlay, List, ListIcon, ListItem } from "@chakra-ui/layout"
 import NextLink from "next/link"
 import { playSongs } from "./sideMenuRoutes"
-
-const playlists = [
-    { id: 1, name: "Playlist 1" },
-    { id: 2, name: "Playlist 2" },
-    { id: 3, name: "Playlist 3" },
-]
+import { useAuthUser } from "../../lib/hooks/useAuthUser"
 
 const Playlist = () => {
+    const { user } = useAuthUser()
+    const playlists = user?.playlist
     return (
         <List spacing={2}>
-            {playlists?.length > 0 &&
+            {user &&
+                playlists?.length > 0 &&
                 playlists.map(playlist => (
                     <ListItem
                         paddingX="20px"
