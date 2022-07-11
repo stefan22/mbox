@@ -54,4 +54,6 @@ const Signin = () => {
     )
 }
 
+// removes sidebar and header when not signed in
+Signin.authPage = true
 export default Signin
