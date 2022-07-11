@@ -33,6 +33,7 @@ module.exports = {
         "arrow-body-style": "off",
         "prefer-arrow-callback": "off",
         "react/jsx-filename-extension": "off",
+        "react/jsx-curly-brace-presence": "off",
         "react/function-component-definition": [
             "error",
             {

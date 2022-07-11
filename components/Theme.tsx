@@ -44,6 +44,9 @@ const Theme = extendTheme({
             purple: {
                 100: "#ba68c8",
             },
+            yello: {
+                100: "#ffffe0",
+            },
             components: {
                 Button: {
                     variants: {

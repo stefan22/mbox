@@ -18,9 +18,14 @@ export default validateRoute(async (req, res, user) => {
             name: "asc",
         },
     })
+    const artists = await prisma.artist.findMany({})
+
+    const songs = await prisma.song.findMany({})
 
     res.json({
         ...user,
         playlist,
+        artists,
+        songs,
     })
 })

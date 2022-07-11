@@ -1,4 +1,4 @@
-import { Box, Flex, Stat, StatLabel, StatNumber, useColorModeValue } from "@chakra-ui/react"
+import { Box, Flex, Image, Stat, StatLabel, StatNumber, useColorModeValue } from "@chakra-ui/react"
 
 /*
  * @fn StatsCard: stats card component
@@ -6,11 +6,12 @@ import { Box, Flex, Stat, StatLabel, StatNumber, useColorModeValue } from "@chak
  * @returns {JSX} - JSX  component
  */
 const StatsCard = props => {
-    const { title, stat, icon } = props
+    const { title, stat, icon, bg = "white", image = "" } = props
     return (
         <Stat
             px={{ base: 2, md: 4 }}
             py="5"
+            bg={bg}
             shadow="xl"
             border="1px solid"
             borderColor={useColorModeValue("gray.800", "gray.500")}
@@ -21,6 +22,7 @@ const StatsCard = props => {
                     <StatLabel fontWeight="medium" isTruncated>
                         {title}
                     </StatLabel>
+                    <Image src={image} borderRadius="100%" />
                     <StatNumber fontSize="2xl" fontWeight="medium">
                         {stat}
                     </StatNumber>

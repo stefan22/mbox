@@ -1,5 +1,5 @@
-import prisma from "../lib/db"
 import bcrypt from "bcrypt"
+import prisma from "../lib/db"
 import { artistsData } from "./songsData"
 
 const run = async () => {
@@ -56,6 +56,7 @@ const run = async () => {
 
 run()
     .catch(e => {
+        // eslint-disable-next-line no-console
         console.error(e)
         process.exit(1)
     })
