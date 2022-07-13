@@ -1,11 +1,11 @@
 import { ChakraProvider } from "@chakra-ui/react"
 import PlayerLayout from "../components/PlayerLayout"
-import Theme from "../components/Theme"
+import theme from "../components/theme"
 import "../styles/global.css"
 
 const App = ({ Component, props }) => {
     return (
-        <ChakraProvider theme={Theme}>
+        <ChakraProvider theme={theme}>
             {Component.authPage ? (
                 <Component {...props} />
             ) : (

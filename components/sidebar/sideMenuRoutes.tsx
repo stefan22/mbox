@@ -38,7 +38,7 @@ const musicMenu = () => [
     {
         name: "Create Playlist",
         icon: MdPlaylistAdd,
-        route: "/playlists",
+        route: "/playlist",
     },
     {
         name: "Favorites",
@@ -51,7 +51,7 @@ const playSongs = () => [
     {
         name: "Play Songs",
         icon: MdFeaturedPlayList,
-        route: "/playlists",
+        route: "/playlist",
     },
 ]
 

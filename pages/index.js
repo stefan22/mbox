@@ -50,7 +50,7 @@ const UserStats = () => {
                 <SimpleGrid columns={{ base: 1, md: 5 }} spacing={{ base: 5, lg: 12 }}>
                     {artists?.map(artist => (
                         <StatsCard
-                            bg="white.100"
+                            bg="whiteAlpha.50"
                             key={artist.id}
                             title={artist.name}
                             stat={artist.songs?.length}
