@@ -36,10 +36,12 @@ const run = async () => {
 
     const songs = await prisma.song.findMany({})
     await Promise.all(
-        new Array(10).fill(1).map(async (_, i) => {
+        new Array(3).fill(1).map(async (_, i) => {
             return prisma.playlist.create({
                 data: {
-                    name: `Playlist #${i + 1}`,
+                    //  playlist name#1 and id#1... name#3 and id#3  for seed data
+                    // eslint-disable-next-line no-nested-ternary
+                    name: `Playlist #${i === 0 ? "3" : i === 1 ? "2" : "1"}`,
                     user: {
                         connect: { id: user.id },
                     },
