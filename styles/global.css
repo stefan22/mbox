@@ -84,6 +84,20 @@
     justify-content: space-around;
 }
 
+/* playlist layout */
+.playlist-layout {
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 250px);
+    overflow-y: auto;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.playlist-layout__header {}
+.playlist-layout__body {}
+
 /* inner-page: signin signup */
 .signin-wrapper,
 .signup-wrapper {

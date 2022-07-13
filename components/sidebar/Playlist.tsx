@@ -10,37 +10,39 @@ const Playlist = () => {
         <List spacing={2}>
             {user &&
                 playlists?.length > 0 &&
-                playlists.map(playlist => (
-                    <ListItem
-                        paddingX="20px"
-                        fontSize="16px"
-                        className="sidenav-links"
-                        color="gray.600"
-                        key={playlist.id}
-                    >
-                        <LinkBox>
-                            <NextLink
-                                href={{
-                                    pathname: `/playlists/[id]`,
-                                    query: { id: playlist.id },
-                                }}
-                                passHref
-                            >
-                                <LinkOverlay>
-                                    {playSongs().map(play => (
-                                        <ListIcon
-                                            key={play.name}
-                                            as={play.icon}
-                                            color="gray.500"
-                                            marginRight="20px"
-                                        />
-                                    ))}
-                                    {playlist.name}
-                                </LinkOverlay>
-                            </NextLink>
-                        </LinkBox>
-                    </ListItem>
-                ))}
+                playlists.map(playlist =>
+                    user.id === playlist.userId ? (
+                        <ListItem
+                            paddingX="20px"
+                            fontSize="16px"
+                            className="sidenav-links"
+                            color="gray.600"
+                            key={playlist.id}
+                        >
+                            <LinkBox>
+                                <NextLink
+                                    href={{
+                                        pathname: `/playlist/[id]`,
+                                        query: { id: playlist.id },
+                                    }}
+                                    passHref
+                                >
+                                    <LinkOverlay>
+                                        {playSongs().map(play => (
+                                            <ListIcon
+                                                key={play.name}
+                                                as={play.icon}
+                                                color="gray.500"
+                                                marginRight="20px"
+                                            />
+                                        ))}
+                                        {playlist.name}
+                                    </LinkOverlay>
+                                </NextLink>
+                            </LinkBox>
+                        </ListItem>
+                    ) : null
+                )}
         </List>
     )
 }
