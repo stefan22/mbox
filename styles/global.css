@@ -1,3 +1,9 @@
+button:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
 /* wrapper */
 .main-wrapper {
 }
@@ -90,13 +96,33 @@
     flex-direction: column;
     width: calc(100vw - 250px);
     overflow-y: auto;
-    height: 100vh;
+    height: calc(100vh - 100px);
     padding: 0;
     margin: 0;
 }
 
-.playlist-layout__header {}
-.playlist-layout__body {}
+.playlist-layout__header {
+}
+.playlist-layout__body {
+}
+
+/* playbar container */
+.playbar-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100vw - 250px);
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.playerbar-container > div {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    max-width: 28.9%;
+}
 
 /* inner-page: signin signup */
 .signin-wrapper,

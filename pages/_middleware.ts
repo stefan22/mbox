@@ -3,13 +3,12 @@ import { NextResponse } from "next/server"
 const protectedPages = ["/", "/playlist", "/library", "/search", "/favorites"]
 
 /*
- * @fn Middleware - checks to see if user has a valid token/cookie,
- * and if not, redirects to signin page
+ * @fn _middleware - checks to see if a valid token exists
  * @param req - the request object
- * @returns NextResponse - redirects to signin page if user is not signed in
+ * @returns NextResponse - redirects to signin page when no token exists
  */
 
-const Middleware = req => {
+const _middleware = req => {
     if (protectedPages.find(p => p === req.nextUrl.pathname)) {
         const token = req.cookies.MBOX_ACCESS_TOKEN
 
@@ -19,4 +18,4 @@ const Middleware = req => {
     }
 }
 
-export default Middleware
+export default _middleware
