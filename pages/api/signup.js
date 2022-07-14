@@ -38,7 +38,7 @@ export default async (req, res) => {
             email: user.email,
             time: Date.now(),
         },
-        "SECRET",
+        process.env.NEXTAUTH_SECRET,
         { expiresIn: "4h" }
     )
 
