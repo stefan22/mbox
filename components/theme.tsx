@@ -1,4 +1,8 @@
 import { extendTheme } from "@chakra-ui/react"
+import "@fontsource/raleway/400.css"
+import "@fontsource/raleway/500.css"
+import "@fontsource/open-sans/400.css"
+import "@fontsource/open-sans/500.css"
 
 /*
  * @fn Theme - Extend theme component
@@ -6,6 +10,10 @@ import { extendTheme } from "@chakra-ui/react"
  * @returns {Object} - Extended theme object
  */
 const theme = extendTheme({
+    fonts: {
+        heading: `Open Sans, sans-serif`,
+        body: `Raleway, sans-serif`,
+    },
     colors: {
         gray: {
             100: "#f5f5f5",

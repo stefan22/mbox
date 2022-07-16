@@ -1,7 +1,7 @@
 import NextImage from "next/image"
 import NextLink from "next/link"
 import { Box, List, ListItem, LinkOverlay, LinkBox, ListIcon, Divider, Text, Flex } from "@chakra-ui/layout"
-import bart from "../../public/images/bart2.jpeg"
+import homer from "../../public/images/homer2_small.png"
 import { navMenu, musicMenu } from "./sideMenuRoutes"
 import Playlist from "./Playlist"
 import SideSignin from "./SideSignin"
@@ -14,7 +14,7 @@ const Sidebar = () => {
             <Box className="side_inner-wrapper">
                 <Box className="logo">
                     <Flex display="flex" justifyContent="flex-start" width="100%">
-                        <NextImage src={bart} height={35} width={35} alt="Bart" />{" "}
+                        <NextImage id="mbox-homer" width="58" height="47" src={homer} alt="Bart" />{" "}
                         <Text
                             ml={2}
                             textTransform="uppercase"

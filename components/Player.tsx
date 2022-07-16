@@ -34,22 +34,17 @@ const Player = ({ songs, activeSong }) => {
     const soundRef = useRef(null)
     const repeatRef = useRef(repeat)
     const setActiveSong = useStoreActions((state: any) => state.changeActiveSong)
-    // eslint-disable-next-line no-console
-    console.log("songs are ", songs, " active song is ", activeSong)
 
     useEffect(() => {
         let timerId
-
         if (playing && !isSeeking) {
             const f = () => {
                 setSeek(soundRef.current.seek())
                 timerId = requestAnimationFrame(f)
             }
-
             timerId = requestAnimationFrame(f)
             return () => cancelAnimationFrame(timerId)
         }
-
         cancelAnimationFrame(timerId)
     }, [playing, isSeeking])
 
@@ -57,58 +52,51 @@ const Player = ({ songs, activeSong }) => {
         setActiveSong(songs[index])
     }, [index, setActiveSong, songs])
 
+    const handlePlayState = val => setPlaying(val)
+
+    const handleShuffle = () => setShuffle(shuf => !shuf)
+
+    const handleRepeat = () => setRepeat(rep => !rep)
+
+    const handlePrevSong = () => setIndex(idx => (idx ? idx - 1 : songs.length - 1))
+
+    const handleNextSong = () => {
+        setIndex(idx => {
+            if (shuffle) {
+                const nextSong = Math.floor(Math.random() * songs.length)
+                //  if next song is the same, try again.
+                if (nextSong === idx) {
+                    return handleNextSong()
+                }
+                return nextSong
+            }
+            // if no shuffle, play next song
+            return idx === songs.length - 1 ? 0 : idx + 1
+        })
+    }
+
+    // keeping track of repeat
     useEffect(() => {
         repeatRef.current = repeat
     }, [repeat])
 
-    const setPlayState = value => {
-        setPlaying(value)
-    }
-
-    const onShuffle = () => {
-        setShuffle(state => !state)
-    }
-
-    const onRepeat = () => {
-        setRepeat(state => !state)
-    }
-
-    const prevSong = () => {
-        setIndex(state => {
-            return state ? state - 1 : songs.length - 1
-        })
-    }
-
-    const nextSong = () => {
-        setIndex(state => {
-            if (shuffle) {
-                const next = Math.floor(Math.random() * songs.length)
-
-                if (next === state) {
-                    return nextSong()
-                }
-                return next
-            }
-
-            return state === songs.length - 1 ? 0 : state + 1
-        })
-    }
-
+    // howlerjs
     const onEnd = () => {
         if (repeatRef.current) {
             setSeek(0)
             soundRef.current.seek(0)
         } else {
-            nextSong()
+            handleNextSong()
         }
     }
 
+    // howlerjs
     const onLoad = () => {
         const songDuration = soundRef.current.duration()
         setDuration(songDuration)
     }
 
-    const onSeek = e => {
+    const handleOnSeek = e => {
         setSeek(parseFloat(e[0]))
         soundRef.current.seek(e[0])
     }
@@ -132,7 +120,7 @@ const Player = ({ songs, activeSong }) => {
                         aria-label="shuffle"
                         fontSize="24px"
                         color={shuffle ? "white" : "gray.600"}
-                        onClick={onShuffle}
+                        onClick={handleShuffle}
                         icon={<MdShuffle />}
                     />
                     <IconButton
@@ -141,7 +129,7 @@ const Player = ({ songs, activeSong }) => {
                         aria-label="skip"
                         fontSize="24px"
                         icon={<MdSkipPrevious />}
-                        onClick={prevSong}
+                        onClick={handlePrevSong}
                     />
                     {playing ? (
                         <IconButton
@@ -152,7 +140,7 @@ const Player = ({ songs, activeSong }) => {
                             fontSize="40px"
                             color="whiteAlpha.800"
                             icon={<MdOutlinePauseCircleFilled />}
-                            onClick={() => setPlayState(false)}
+                            onClick={() => handlePlayState(false)}
                         />
                     ) : (
                         <IconButton
@@ -162,7 +150,7 @@ const Player = ({ songs, activeSong }) => {
                             fontSize="40px"
                             color="gray.400"
                             icon={<MdOutlinePlayCircleFilled />}
-                            onClick={() => setPlayState(true)}
+                            onClick={() => handlePlayState(true)}
                         />
                     )}
 
@@ -172,7 +160,7 @@ const Player = ({ songs, activeSong }) => {
                         aria-label="next"
                         fontSize="24px"
                         icon={<MdSkipNext />}
-                        onClick={nextSong}
+                        onClick={handleNextSong}
                     />
                     <IconButton
                         outline="none"
@@ -180,7 +168,7 @@ const Player = ({ songs, activeSong }) => {
                         aria-label="repeat"
                         fontSize="24px"
                         color={repeat ? "white" : "gray.600"}
-                        onClick={onRepeat}
+                        onClick={handleRepeat}
                         icon={<MdOutlineRepeat />}
                     />
                 </ButtonGroup>
@@ -199,7 +187,7 @@ const Player = ({ songs, activeSong }) => {
                             min={0}
                             id="player-range"
                             max={duration ? (duration.toFixed(2) as unknown as number) : 0}
-                            onChange={onSeek}
+                            onChange={handleOnSeek}
                             value={[seek]}
                             onChangeStart={() => setIsSeeking(true)}
                             onChangeEnd={() => setIsSeeking(false)}

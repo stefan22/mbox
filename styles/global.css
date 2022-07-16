@@ -3,6 +3,10 @@ button:focus {
     border: none !important;
     box-shadow: none !important;
 }
+.page-heading {
+    margin: 0 1rem;
+}
+
 
 /* wrapper */
 .main-wrapper {
@@ -134,8 +138,8 @@ button:focus {
     height: 100%;
     justify-content: center;
 }
-
-.inner-wrapper {
+.signin-wrapper .inner-wrapper,
+.signup-wrapper .inner-wrapper {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -143,11 +147,17 @@ button:focus {
     justify-content: flex-start;
 }
 
-.page-heading {
-    margin: 0 1rem;
-}
 
 /* user form */
+
+#user-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 210px;
+    justify-content: space-around;
+}
+
 .form-wrapper {
     display: flex;
     flex-direction: column;
@@ -160,25 +170,18 @@ button:focus {
     margin-bottom: 2rem;
 }
 
-#user-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 210px;
-    justify-content: space-around;
-}
 
-#user-form input {
+.form-wrapper input {
     margin: 1rem 0;
     background: white;
     width: 320px;
 }
 
-#user-form button {
+.form-wrapper button {
     margin-top: 3rem;
 }
 
-.input-error {
+.form-wrapper .input-error {
     color: red;
     height: 24px;
     margin: 1rem 0;
@@ -196,22 +199,6 @@ button:focus {
     align-items: center;
 }
 
-/* footer */
-.footer {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100px;
-    border-top: 2px solid #13395d;
-    width: 100%;
-    padding: 0.25rem 0 0.25rem;
-}
-
-.footer p {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 /* media queries */
 @media screen and (max-width: 1319px) {
