@@ -28,7 +28,7 @@ export default async (req, res) => {
             },
             "SECRET",
             {
-                expiresIn: "4h",
+                expiresIn: "8h",
             }
         )
 
@@ -42,7 +42,7 @@ export default async (req, res) => {
                 secure: process.env.NODE_ENV === "production",
             })
         )
-
+        res.status(200)
         res.json(user)
     } else {
         res.status(401)

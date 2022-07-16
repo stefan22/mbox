@@ -22,22 +22,20 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+-   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-
 ## Routes configuration
 
-- [/](/) - the home page or http://localhost:3000/
-- [/api/hello](/api/hello) - an API route or http://localhost:3000/api/hello
-- [/api/hello/:name](/api/hello/:name) - an API route with a parameter.
-
+-   [/](/) - the home page or http://localhost:3000/
+-   [/api/hello](/api/hello) - an API route or http://localhost:3000/api/hello
+-   [/api/hello/:name](/api/hello/:name) - an API route with a parameter.
 
 ## Prisma DB
-[DATA] Heroku  with Prisma DB  -  .env file not included in this repository.
+
+[DATA] Heroku with Prisma DB - .env file not included in this repository.
 See how to create a new project with Prisma DB ORM in the [Next.js documentation](https://nextjs.org/docs/basic-features/databases/prisma).
 
-
-- nextjs, react, prisma , signup, signin, jwtoken, http-pie, postman
+-   nextjs, react, prisma , signup, signin, jwtoken, http-pie, postman

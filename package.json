@@ -15,11 +15,12 @@
         "@dh-react-hooks/use-raf": "^0.9.1",
         "@emotion/react": "^11.6.0",
         "@emotion/styled": "^11.6.0",
-        "@prisma/client": "^4.0.0",
+        "@fontsource/open-sans": "^4.5.10",
+        "@fontsource/raleway": "^4.5.9",
+        "@prisma/client": "^3.6.0",
         "bcrypt": "^5.0.1",
         "cookie": "^0.4.1",
         "cookies": "^0.8.0",
-        "dotenv": "^16.0.1",
         "easy-peasy": "^5.0.4",
         "format-duration": "^1.4.0",
         "framer-motion": "^4.1.17",
@@ -30,8 +31,7 @@
         "react-howler": "^5.2.0",
         "react-icons": "^4.3.1",
         "reset-css": "^5.0.1",
-        "swr": "^1.1.1",
-        "typescript": "^4.3.2"
+        "swr": "^1.1.1"
     },
     "devDependencies": {
         "@types/react": "^17.0.37",
@@ -48,8 +48,9 @@
         "eslint-plugin-react": "^7.27.1",
         "eslint-plugin-react-hooks": "^4.3.0",
         "prettier": "^2.4.1",
-        "prisma": "^4.0.0",
-        "ts-node": "^10.4.0"
+        "prisma": "^3.6.0",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.7.4"
     },
     "prisma": {
         "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
