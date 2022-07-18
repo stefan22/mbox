@@ -25,7 +25,7 @@ describe("Signup", () => {
     })
 
 
-      it("should require a password when email is present", () => {
+      it("should require a password", () => {
         cy.get("@submit").click();
         cy.get("[data-test='user-password']:invalid")
           .should('have.length', 1);

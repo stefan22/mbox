@@ -3,7 +3,7 @@ describe("Unauthenticated user", () => {
         cy.visit("/")
     })
 
-    it("Should redirect user to '/signin'", () => {
+    it("should redirect user to '/signin'", () => {
         cy.location("pathname").should("eq", "/signin")
     })
 
