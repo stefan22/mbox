@@ -36,13 +36,16 @@ const AuthForm = ({
             </Flex>
 
             <Flex className="form-wrapper" justify="center" align="center" height="calc(75vh)">
-                <Text fontSize="2xl">{mode === "signup" ? "New Users" : "Welcome back"}</Text>
+                <Text data-test={mode} fontSize="2xl">
+                    {mode === "signup" ? "New Users" : "Welcome back"}
+                </Text>
 
                 <Box padding="50px" border="1px solid gray " borderRadius="4px">
-                    <form id="user-form" onSubmit={handleSubmit}>
+                    <form data-test="user-form" id="user-form" onSubmit={handleSubmit}>
                         {mode === "signup" && (
                             <>
                                 <Input
+                                    data-test="user-firstname"
                                     name="firstName"
                                     value={firstName}
                                     placeholder="firstname"
@@ -50,6 +53,7 @@ const AuthForm = ({
                                     onChange={e => handleName(e)}
                                 />
                                 <Input
+                                    data-test="user-lastname"
                                     name="lastName"
                                     value={lastName}
                                     placeholder="lastname"
@@ -61,6 +65,7 @@ const AuthForm = ({
                         )}
 
                         <Input
+                            data-test="user-email"
                             name="email"
                             value={email}
                             placeholder="email"
@@ -69,6 +74,7 @@ const AuthForm = ({
                             onChange={e => handleName(e)}
                         />
                         <Input
+                            data-test="user-password"
                             value={password}
                             name="password"
                             placeholder="password"
@@ -77,6 +83,7 @@ const AuthForm = ({
                             onChange={e => handleName(e)}
                         />
                         <Button
+                            data-test="data-submit"
                             type="submit"
                             bg="gray.900"
                             color="white"
@@ -92,7 +99,7 @@ const AuthForm = ({
                     </form>
                 </Box>
                 {error && (
-                    <Text className="input-error" textAlign="center" color="red.500">
+                    <Text data-test="input-error" className="input-error" textAlign="center" color="red.500">
                         Invalid email or password
                     </Text>
                 )}
