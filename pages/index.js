@@ -1,4 +1,5 @@
 import { Box, Flex, chakra, SimpleGrid } from "@chakra-ui/react"
+import { useStoreActions } from "easy-peasy"
 import { Text } from "@chakra-ui/layout"
 import { ImSoundcloud } from "react-icons/im"
 import { GiMusicalScore } from "react-icons/gi"
@@ -11,9 +12,21 @@ const UserStats = () => {
     const playlists = userStats?.playlist
     const artists = userStats?.artists
     const songs = userStats?.songs
+    const setCurrentUser = useStoreActions(store => store.setCurrentUser)
+    const setPlaylists = useStoreActions(store => store.setPlaylists)
 
     if (loadingUser) {
-        return <Text>Loading home...</Text>
+        return <Text>Loading...</Text>
+    }
+    if (userStats && !loadingUser) {
+        const isUser = {
+            id: userStats?.id,
+            email: userStats?.email,
+            firstName: userStats?.firstName,
+            lastName: userStats?.lastName,
+        }
+        setCurrentUser(isUser)
+        setPlaylists(userStats?.playlist)
     }
 
     return (

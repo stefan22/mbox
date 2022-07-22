@@ -1,10 +1,24 @@
 import { LinkBox, LinkOverlay, List, ListIcon, ListItem } from "@chakra-ui/layout"
 import NextLink from "next/link"
+import { useStoreActions } from "easy-peasy"
 import { playSongs } from "./sideMenuRoutes"
 import { useAuthUser } from "../../lib/hooks/useAuthUser"
 
 const Playlist = () => {
-    const { user } = useAuthUser()
+    const { user, loadingUser } = useAuthUser()
+    const setCurrentUser = useStoreActions((store: any) => store.setCurrentUser)
+    if (loadingUser) {
+        return <div>Loading user...</div>
+    }
+    if (user && !loadingUser) {
+        const isUser = {
+            id: user?.id,
+            email: user?.email,
+            firstName: user?.firstName,
+            lastName: user?.lastName,
+        }
+        setCurrentUser(isUser)
+    }
     const playlists = user?.playlist
     return (
         <List spacing={2}>

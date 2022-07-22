@@ -6,8 +6,8 @@ import { AiOutlineClockCircle } from "react-icons/ai"
 import { formatDate, formatTime } from "../lib/songFormat"
 
 const SongTable = ({ songs }) => {
-    const playSongs = useStoreActions((store: any) => store.changeActiveSongs)
-    const setActiveSong = useStoreActions((store: any) => store.changeActiveSong)
+    const playSongs = useStoreActions((store: any) => store.setSongs)
+    const setActiveSong = useStoreActions((store: any) => store.setActiveSong)
 
     const handlePlay = (activeSong?) => {
         setActiveSong(activeSong || songs[0])

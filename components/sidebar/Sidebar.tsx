@@ -4,9 +4,7 @@ import { Box, List, ListItem, LinkOverlay, LinkBox, ListIcon, Divider, Text, Fle
 import homer from "../../public/images/homer2_small.png"
 import { navMenu, musicMenu } from "./sideMenuRoutes"
 import Playlist from "./Playlist"
-import SideSignin from "./SideSignin"
 import SideSignout from "./SideSignout"
-import SideSignup from "./SideSignup"
 
 const Sidebar = () => {
     return (
@@ -71,9 +69,7 @@ const Sidebar = () => {
                 </List>
                 <Divider className="side-divider" color="gray.500" />
                 <List spacing={2}>
-                    <SideSignin />
                     <SideSignout />
-                    <SideSignup />
                 </List>
                 <Divider className="side-divider" color="gray.500" />
                 <Playlist />
