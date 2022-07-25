@@ -1,15 +1,43 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+
 button:focus {
     outline: none !important;
     border: none !important;
     box-shadow: none !important;
 }
+button, a {
+    cursor: pointer;
+}
 .page-heading {
     margin: 0 1rem;
 }
 
-
 /* wrapper */
 .main-wrapper {
+    display: flex;
+    width: 100%;
+    height: auto;
+    border: none;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+}
+
+.main-content__section {
+    display: flex;
 }
 
 /* sidebar */
@@ -27,16 +55,27 @@ button:focus {
     height: 100%;
 }
 
+.side_inner-wrapper > div {
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.side_inner-wrapper > div > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
 .logo {
     width: 100%;
     height: 57px;
     margin: 0;
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    padding: 0 0.5rem;
     margin-bottom: 2rem;
 }
 
 .logo p {
-    margin-left: 1rem;
+    margin-left: 0;
 }
 
 .side-divider {
@@ -46,18 +85,23 @@ button:focus {
 /* main-content */
 .main-content {
     display: flex;
-    width: 100%;
-    height: 100%;
-    flex-wrap: wrap;
+    padding: 0;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
 }
 
-.main-content__section {
+.main-content__user {
+}
+
+.profile-roundabout > div {
     display: flex;
-    padding: 0;
-    margin: 0;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: auto;
 }
 
 .section__heading {
@@ -110,14 +154,24 @@ button:focus {
 .playlist-layout__body {
 }
 
-/* playbar container */
-.playbar-container {
+/* playbar */
+
+.playerbar-wrapper {
+    z-index: 10;
+    border-top: 3px solid #676767;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
+.playerbar-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     width: calc(100vw - 250px);
-    height: 100%;
+    height: auto;
     padding: 0;
     margin: 0;
 }
@@ -132,21 +186,51 @@ button:focus {
 .signin-wrapper,
 .signup-wrapper {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+}
+.signin-wrapper .inner-wrapper,
+.signup-wrapper .inner-wrapper {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
     justify-content: center;
 }
-.signin-wrapper .inner-wrapper,
-.signup-wrapper .inner-wrapper {
+
+.signup-button {
+    padding: 10px 25px;
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    justify-content: flex-start;
+    font-weight: 400;
+    width: 180px;
+    line-height: 24px;
+    background: transparent;
+    border: 1px solid #dbd4d4;
+    border-radius: 4px;
 }
 
+.signup-button:focus,
+.signup-button:active {
+    outline: none;
+}
+.signup-button:hover,
+signin-button:hover {
+    border: 1px solid #9e9e9e;
+}
+
+.signup-button svg {
+    margin-right: 0.5rem;
+    width: 24px;
+    height: 24px;
+    fill: coral;
+}
+
+.user-stats svg {
+    margin: 0 auto;
+}
 
 /* user form */
 
@@ -154,8 +238,32 @@ button:focus {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 210px;
-    justify-content: space-around;
+    height: auto;
+    min-height: 360px;
+    justify-content: space-evenly;
+}
+
+#user-form button {
+    background: #ff7043;
+    font-weight: 600;
+    border: 1px solid lightgrey;
+    color: #fff;
+}
+#user-form button:hover,
+#user-form button:active,
+#user-form button:focus {
+    border: 1px solid lightgrey;
+}
+
+.signin-wrapper button:hover,
+.signup-wrapper button:hover {
+    background: transparent;
+}
+.user-form__signup {
+}
+
+.user-form__signin {
+    justify-content: center;
 }
 
 .form-wrapper {
@@ -163,22 +271,24 @@ button:focus {
     flex-direction: column;
     height: 100%;
     width: 100%;
+    height: calc(87vh);
     justify-content: flex-start;
 }
 
 .form-wrapper p {
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 }
-
 
 .form-wrapper input {
     margin: 1rem 0;
     background: white;
     width: 320px;
+    min-height: 47px;
 }
 
 .form-wrapper button {
-    margin-top: 3rem;
+    margin-top: 2rem;
+    background: transparent;
 }
 
 .form-wrapper .input-error {
@@ -192,13 +302,18 @@ button:focus {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
-    margin: 3rem 0;
+    height: auto;
+    margin: 3rem 0 10rem;
     justify-content: flex-start;
     align-content: center;
     align-items: center;
 }
 
+.artist-image--cover {
+    border-radius: 50%;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12),
+        0 1px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
 /* media queries */
 @media screen and (max-width: 1319px) {
@@ -219,5 +334,81 @@ button:focus {
     }
     .artist-card {
         max-width: 480px;
+    }
+
+    .playerbar-container > div > p {
+        display: none;
+    }
+    .playerbar-wrapper > div {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .player-wrapper {
+        min-width: 300px;
+    }
+    .top-artists h2 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    .top-artists p {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+}
+
+.grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+}
+
+.card {
+    margin: 1rem;
+    padding: 1.5rem;
+    text-align: left;
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    max-width: 300px;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+    color: #0070f3;
+    border-color: #0070f3;
+}
+
+.card h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+}
+
+.card p {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .grid {
+        width: 100%;
+        flex-direction: column;
+    }
+    .playerbar-wrapper {
+        display: none;
+    }
+    .top-artists h2 {
+        font-size: 1.25rem;
     }
 }

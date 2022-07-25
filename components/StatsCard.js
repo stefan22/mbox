@@ -6,7 +6,9 @@ import { Box, Flex, Image, Stat, StatLabel, StatNumber, useColorModeValue } from
  * @returns {JSX} - JSX  component
  */
 const StatsCard = props => {
-    const { title, stat, icon, bg = "white", image = "" } = props
+    const { title, stat, icon, cover, bg = "white", image = "" } = props
+    let isImage = `${cover.trim().replace(" ", "").toLowerCase()}`
+    isImage = `${isImage}.jpg`
     return (
         <Stat
             px={{ base: 2, md: 4 }}
@@ -25,6 +27,7 @@ const StatsCard = props => {
                         {stat}
                     </StatNumber>
                 </Box>
+                <Image src={`/public/images/${isImage}`} />
                 <Box my="auto" color={useColorModeValue("gray.800", "gray.200")} alignContent="center">
                     {icon}
                 </Box>

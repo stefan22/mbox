@@ -10,18 +10,22 @@ import { createStore, action } from "easy-peasy"
  *  See: easy-peasy.dev documentation for more information.
  */
 export const store = createStore({
-    activeSongs: [],
+    songs: [],
     activeSong: null,
     currentUser: null,
     playlists: [],
+    artists: [],
     setCurrentUser: action((state: any, payload) => {
         state.currentUser = payload
     }),
     setPlaylists: action((state: any, payload) => {
         state.playlists = payload
     }),
+    setArtists: action((state: any, payload) => {
+        state.artists = payload
+    }),
     setSongs: action((state: any, payload) => {
-        state.activeSongs = payload
+        state.songs = payload
     }),
     setActiveSong: action((state: any, payload) => {
         state.activeSong = payload

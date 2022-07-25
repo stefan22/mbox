@@ -10,11 +10,11 @@ import PlayerBar from "./PlayerBar"
  */
 const PlayerLayout = ({ children }) => {
     return (
-        <Box className="main-wrapper" width="100vw" height="100vh">
+        <Box className="main-wrapper">
             <Box position="fixed" bg="gray.900" top="0" bottom="0" width="250px" left="0">
                 <Sidebar />
             </Box>
-            <Box marginLeft="250px">
+            <Box width="100%" marginLeft="250px">
                 <Box className="main-content">
                     {children}
                     <PlayerBar />
