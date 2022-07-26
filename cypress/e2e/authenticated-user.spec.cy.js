@@ -9,7 +9,7 @@ describe("User Signup", () => {
     beforeEach(() => {
         // reset db
         cy.task("dbReset")
-        cy.task("dbSeed")
+       //  cy.task("dbSeed")
     })
 
     it("should successfully signup a new user", () => {
