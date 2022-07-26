@@ -20,6 +20,7 @@ describe("Unauthenticated user", () => {
     })
 
     it("should include a signin button in form", () => {
-        cy.contains("signin")
+        cy.get("[data-test='data-submit']").should("exist")
+        cy.contains("Signin")
     })
 })
