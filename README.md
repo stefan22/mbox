@@ -1,41 +1,37 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+### About this project
+A music player application that allows users to play music from playlists once signed-in.
+Why? 
+Because I wanted 
+to build something with NextJS      
+NextJS is a JS framework built on top of React that can handle both front-end and backend 
+development. For example, retrieving data server side from within your pages directory in your 
+front-end application (with getServerSideProps) and features like Automatic Static 
+Optimisation that  will hydrate the application for you.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+###  How-to install
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- Type `npm install` in the terminal to dependencies.    
+- Type `npm run dev` in the terminal to start the development server.    
+- Then open `http://localhost:3000` in  your browser
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### API routes
 
-## Learn More
+- API routes can be accessed on http://localhost:3000/api/API_route.        
+- This endpoint can be edited in `pages/api/API_route.js`.
 
-To learn more about Next.js, take a look at the following resources:
+### Prisma DB/ORM
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Routes configuration
-
--   [/](/) - the home page or http://localhost:3000/
--   [/api/hello](/api/hello) - an API route or http://localhost:3000/api/hello
--   [/api/hello/:name](/api/hello/:name) - an API route with a parameter.
-
-## Prisma DB
-
-[DATA] Heroku with Prisma DB - .env file not included in this repository.
+Prisma DB deploy to Heroku.  
 See how to create a new project with Prisma DB ORM in the [Next.js documentation](https://nextjs.org/docs/basic-features/databases/prisma).
 
--   nextjs, react, prisma , signup, signin, jwtoken, http-pie, postman
+### Tech used
+NextJS, React Hooks, Prisma , JWToken authentication , Chakra-UI, Cypres.io, HTTP-Pie, React-howler
+
+### Gif view 
+
+Screenshot [gifView](assets/appGIF.gif)
