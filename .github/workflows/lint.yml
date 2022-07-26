@@ -1,4 +1,4 @@
-name: ci
+name: Lint project
 
 on:
     pull_request:
@@ -22,3 +22,5 @@ jobs:
             - run: npm ci
             - run: npm run lint
             - run: npm run format
+              env:
+                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
