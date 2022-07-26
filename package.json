@@ -7,7 +7,9 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "format": "prettier --write \"pages/**/*.{js,jsx,ts,tsx}\""
+        "format": "prettier --write \"pages/**/*.{js,jsx,ts,tsx}\"",
+        "cypress:open": "cypress open",
+        "cypress:run": "cypress run"
     },
     "dependencies": {
         "@chakra-ui/layout": "^1.5.1",
