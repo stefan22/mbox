@@ -12,7 +12,6 @@ import {
 } from "@chakra-ui/react"
 import ReactHowler from "react-howler"
 import { useEffect, useRef, useState } from "react"
-import { useStoreActions } from "easy-peasy"
 import {
     MdShuffle,
     MdSkipPrevious,
@@ -21,7 +20,7 @@ import {
     MdOutlinePauseCircleFilled,
     MdOutlineRepeat,
 } from "react-icons/md"
-
+import { useStoreActions } from "easy-peasy"
 import { formatTime } from "../lib/songFormat"
 
 const Player = ({ songs, activeSong }) => {
@@ -50,9 +49,7 @@ const Player = ({ songs, activeSong }) => {
     }, [playing, isSeeking])
 
     useEffect(() => {
-        if (songs) {
-            setActiveSong(songs[index])
-        }
+        setActiveSong(songs[index])
     }, [index, setActiveSong, songs])
 
     const handlePlayState = val => setPlaying(val)
@@ -107,15 +104,13 @@ const Player = ({ songs, activeSong }) => {
     return (
         <Box className="player-container">
             <Box>
-                {activeSong && (
-                    <ReactHowler
-                        playing={playing}
-                        src={activeSong?.url}
-                        ref={soundRef}
-                        onLoad={onLoad}
-                        onEnd={onEnd}
-                    />
-                )}
+                <ReactHowler
+                    playing={playing}
+                    src={activeSong?.url || "hola"}
+                    ref={soundRef}
+                    onLoad={onLoad}
+                    onEnd={onEnd}
+                />
             </Box>
             <Center color="gray.600">
                 <ButtonGroup>
@@ -141,10 +136,10 @@ const Player = ({ songs, activeSong }) => {
                             outline="none"
                             variant="link"
                             aria-label="pause"
-                            bg={shuffle ? "blackAlpha.50" : "whiteAlpha.50"}
+                            bg={shuffle ? "whiteAlpha.400" : "whiteAlpha.50"}
                             fontSize="40px"
-                            color="white"
-                            border="1px solid whiteAlpha100"
+                            color="blackAlpha.400"
+                            border="1px solid whiteAlpha.900"
                             icon={<MdOutlinePauseCircleFilled />}
                             onClick={() => handlePlayState(false)}
                         />
@@ -154,7 +149,8 @@ const Player = ({ songs, activeSong }) => {
                             variant="link"
                             aria-label="play"
                             fontSize="40px"
-                            color="whiteAlpha.900"
+                            border="1px solid whiteAlpha.900"
+                            color="blackAlpha.400"
                             icon={<MdOutlinePlayCircleFilled />}
                             onClick={() => handlePlayState(true)}
                         />
