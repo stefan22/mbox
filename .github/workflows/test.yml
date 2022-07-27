@@ -9,7 +9,7 @@ jobs:
       - name: Checkout # checks-out repo & pulls it into pipeline
         uses: actions/checkout@v2
       - name: Cypress run # cy installs deps and runs tests
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v2
         with:
           build: npm run build
           start: npm start
