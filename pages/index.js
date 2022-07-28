@@ -62,7 +62,7 @@ const Home = () => {
                             columns={{ base: 1, sm: "2", md: "4", lg: "5" }}
                             spacing={{ base: "6", md: "9", lg: "7" }}
                         >
-                            {userStats?.artists.map(artist => (
+                            {userStats?.artists?.map(artist => (
                                 <ArtistCard
                                     key={artist.id}
                                     title={artist.name}

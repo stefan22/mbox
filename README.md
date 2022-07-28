@@ -2,13 +2,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ### About this project
 A music player application that allows users to play music from playlists once signed-in.
-Why? 
-Because I wanted 
-to build something with NextJS      
-NextJS is a JS framework built on top of React that can handle both front-end and backend 
-development. For example, retrieving data server side from within your pages directory in your 
-front-end application (with getServerSideProps) and features like Automatic Static 
-Optimisation that  will hydrate the application for you.
+With NextJS you can call server-side functions to fetch your data from within  your front-end 
+application, and/or create API endpoints. Next.js lets you choose which pre-rendering form you'd 
+like to use for each page. You can create a "hybrid" Next.js app by using Static Generation for 
+most pages and using Server-side Rendering for others. You can also use Client-side Rendering 
+along with Static Generation or Server-side Rendering. That means some parts of a page can be 
+rendered entirely by client side JavaScript too.
 
 
 
