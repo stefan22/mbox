@@ -1,13 +1,9 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ### About this project
-A music player application that allows users to play music from playlists once signed-in.
-With NextJS you can call server-side functions to fetch your data from within  your front-end 
-application, and/or create API endpoints. Next.js lets you choose which pre-rendering form you'd 
-like to use for each page. You can create a "hybrid" Next.js app by using Static Generation for 
-most pages and using Server-side Rendering for others. You can also use Client-side Rendering 
-along with Static Generation or Server-side Rendering. That means some parts of a page can be 
-rendered entirely by client side JavaScript too.
+Another music player application that allows users to play music from playlists once signed-in.    
+Why? wanted to build a project with NextJS - a framework built on top of React. With NextJS you can call server-side functions to 
+fetch your data from within your front-end application. NextJS automatically configures some of your pages (Automatic Static Optimization), it lets you choose which pre-rendering to use for each page and create hybrid applications. Another nice feature is Middleware for edge functions/CDN.
 
 
 
