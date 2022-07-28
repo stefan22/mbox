@@ -8,9 +8,10 @@ jobs:
     steps:
       - name: Checkout # checks-out repo & pulls it into pipeline
         uses: actions/checkout@v2
-      - name: Cypress run # cy installs deps and runs tests
+      - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
+          browser: chrome
           build: npm run build
           start: npm start
           wait-on: "http://localhost:3000"
