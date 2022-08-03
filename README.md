@@ -1,10 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ### About this project
-Another music player application that allows users to play music from playlists once signed-in.    
-Why? wanted to build a project with NextJS - a framework built on top of React. With NextJS you can call server-side functions to 
-fetch your data from within your front-end application. NextJS automatically configures some of your pages (Automatic Static Optimization), it lets you choose which pre-rendering to use for each page and create hybrid applications. Another nice feature is Middleware for edge functions/CDN.
-
+A music player application that allows users to play music from playlists once signed-in with NextJS   
 
 
 
