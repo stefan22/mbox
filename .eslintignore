@@ -1,6 +1,4 @@
 build/
-*.test.js
-*/setupTests.js
 cypress/
 *.md
 **/*.cy.js
