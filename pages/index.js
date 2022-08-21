@@ -21,7 +21,7 @@ const Home = () => {
             id: userStats.id,
             email: userStats.email,
             firstName: userStats.firstName,
-            lastName: userStats.lastName,
+            lastName: userStats.lastName
         }
         setCurrentUser(isUser)
         setPlaylists(userStats.playlist)

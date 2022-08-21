@@ -15,8 +15,8 @@ export default async (req, res) => {
 
     const user = await prisma.user.findUnique({
         where: {
-            email,
-        },
+            email
+        }
     })
 
     if (user && bcrypt.compareSync(password, user.password)) {
@@ -24,11 +24,11 @@ export default async (req, res) => {
             {
                 id: user.id,
                 email: user.email,
-                time: Date.now(),
+                time: Date.now()
             },
             "SECRET",
             {
-                expiresIn: "8h",
+                expiresIn: "8h"
             }
         )
 
@@ -39,7 +39,7 @@ export default async (req, res) => {
                 maxAge: 8 * 60 * 60,
                 path: "/",
                 sameSite: "lax",
-                secure: process.env.NODE_ENV === "production",
+                secure: process.env.NODE_ENV === "production"
             })
         )
         res.status(200)

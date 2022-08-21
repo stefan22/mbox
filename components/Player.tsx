@@ -8,7 +8,7 @@ import {
     RangeSliderThumb,
     Center,
     Flex,
-    Text,
+    Text
 } from "@chakra-ui/react"
 import ReactHowler from "react-howler"
 import { useEffect, useRef, useState } from "react"
@@ -18,7 +18,7 @@ import {
     MdSkipNext,
     MdOutlinePlayCircleFilled,
     MdOutlinePauseCircleFilled,
-    MdOutlineRepeat,
+    MdOutlineRepeat
 } from "react-icons/md"
 import { useStoreActions } from "easy-peasy"
 import { formatTime } from "../lib/songFormat"

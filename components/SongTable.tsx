@@ -43,8 +43,8 @@ const SongTable = ({ songs }) => {
                                 sx={{
                                     transition: "all .3s ",
                                     "&:hover": {
-                                        bg: "rgba(255,255,255, 0.1)",
-                                    },
+                                        bg: "rgba(255,255,255, 0.1)"
+                                    }
                                 }}
                                 key={song.id}
                                 cursor="pointer"

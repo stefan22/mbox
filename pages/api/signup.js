@@ -23,8 +23,8 @@ export default async (req, res) => {
                 email,
                 password: bcrypt.hashSync(password, salt),
                 firstName,
-                lastName,
-            },
+                lastName
+            }
         })
     } catch (error) {
         res.status(401)
@@ -36,7 +36,7 @@ export default async (req, res) => {
         {
             id: user.id,
             email: user.email,
-            time: Date.now(),
+            time: Date.now()
         },
         process.env.NEXTAUTH_SECRET,
         { expiresIn: "4h" }
@@ -49,7 +49,7 @@ export default async (req, res) => {
             maxAge: 60 * 60 * 4,
             sameSite: "lax",
             path: "/",
-            secure: process.env.NODE_ENV === "production",
+            secure: process.env.NODE_ENV === "production"
         })
     )
     res.json(user)
