@@ -2,14 +2,14 @@ const user = {
     firstName: "Admino22",
     lastName: "Admino",
     email: "admino22@admino.com",
-    password: "12345"
+    password: "12345",
 }
 
 describe("User Signup", () => {
     beforeEach(() => {
         // reset db
-        //  cy.task("dbReset")
-        //  cy.task("dbSeed")
+       //  cy.task("dbReset")
+       //  cy.task("dbSeed")
     })
 
     it("should successfully signup a new user", () => {
@@ -18,8 +18,9 @@ describe("User Signup", () => {
         cy.get("[data-test='user-lastname']").type(user.lastName)
         cy.get("[data-test='user-email']").type(user.email)
         cy.get("[data-test='user-password']").type(user.password)
-        cy.get("[data-test='data-submit']").click()
+        cy.get("[data-test='data-submit']").click();
     })
+
 })
 
 describe("User Signin", () => {
@@ -27,6 +28,7 @@ describe("User Signin", () => {
         cy.visit("/signin")
         cy.get("[data-test='user-email']").type(user.email)
         cy.get("[data-test='user-password']").type(user.password)
-        cy.get("[data-test='data-submit']").click()
+        cy.get("[data-test='data-submit']").click();
     })
+
 })
