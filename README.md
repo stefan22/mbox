@@ -1,5 +1,10 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+[![Tests](https://github.com/stefan22/mbox/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/stefan22/mbox/actions/workflows/tests.yml)
+
+
+
 ### About this project
 A music player application that allows users to play music from playlists once signed-in with NextJS   
 
