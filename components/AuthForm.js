@@ -9,7 +9,7 @@ import {
     Button,
     Heading,
     Text,
-    useColorModeValue,
+    useColorModeValue
 } from "@chakra-ui/react"
 import NextLink from "next/link"
 import { LinkOverlay } from "@chakra-ui/layout"
@@ -30,7 +30,7 @@ const AuthForm = ({
     error,
     mode,
     handleName,
-    handleSubmit,
+    handleSubmit
 }) => {
     return (
         <Flex
@@ -118,7 +118,7 @@ const AuthForm = ({
                                     isLoading={isLoading}
                                     bg={"blue.400"}
                                     sx={{
-                                        bg: "red.600",
+                                        bg: "red.600"
                                     }}
                                 >
                                     {mode.slice(0, 1).toUpperCase() + mode.slice(1, mode.length)}

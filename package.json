@@ -7,7 +7,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "format": "prettier --write \"pages/**/*.{js,jsx,ts,tsx}\"",
+        "prettier:fix": "prettier --write \"./**/*.{js,jsx,ts,tsx}\"",
         "cypress:open": "cypress open",
         "cypress:run": "cypress run"
     },
@@ -24,7 +24,7 @@
         "bcrypt": "^5.0.1",
         "cookie": "^0.4.1",
         "cookies": "^0.8.0",
-        "cypress": "^10.3.1",
+        "cypress": "^10.7.0",
         "easy-peasy": "^5.0.4",
         "format-duration": "^1.4.0",
         "framer-motion": "^4.1.17",

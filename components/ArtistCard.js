@@ -34,12 +34,12 @@ const ArtistCard = ({ title, icon, src }) => {
                         left: 0,
                         backgroundImage: `url(${bensound})`,
                         filter: "blur(50px)",
-                        zIndex: -1,
+                        zIndex: -1
                     }}
                     _groupHover={{
                         _after: {
-                            filter: "blur(1.5px)",
-                        },
+                            filter: "blur(1.5px)"
+                        }
                     }}
                 >
                     <Image

@@ -7,70 +7,70 @@ import {
     MdFeaturedPlayList,
     MdLogin,
     MdLogout,
-    MdAssignmentInd,
+    MdAssignmentInd
 } from "react-icons/md"
 
 const navMenu = () => [
     {
         name: "Home",
         icon: MdHome,
-        route: "/",
+        route: "/"
     },
     {
         name: "Search",
         icon: MdSearch,
-        route: "/search",
+        route: "/search"
     },
 
     {
         name: "Favorites",
         icon: MdFavorite,
-        route: "/favorites",
+        route: "/favorites"
     },
     {
         name: " Library",
         icon: MdLibraryMusic,
-        route: "/library",
-    },
+        route: "/library"
+    }
 ]
 
 const musicMenu = () => [
     {
         name: "Create Playlist",
         icon: MdPlaylistAdd,
-        route: "/playlist",
+        route: "/playlist"
     },
     {
         name: "Favorites",
         icon: MdFavorite,
-        route: "/favorites",
-    },
+        route: "/favorites"
+    }
 ]
 
 const playSongs = () => [
     {
         name: "Play Songs",
         icon: MdFeaturedPlayList,
-        route: "/playlist",
-    },
+        route: "/playlist"
+    }
 ]
 
 const userAccounts = () => [
     {
         name: "Signin",
         icon: MdLogin,
-        route: "/signin",
+        route: "/signin"
     },
     {
         name: "Signout",
         icon: MdLogout,
-        route: "/signout",
+        route: "/signout"
     },
     {
         name: "Signup",
         icon: MdAssignmentInd,
-        route: "/signup",
-    },
+        route: "/signup"
+    }
 ]
 
 export { navMenu, musicMenu, playSongs, userAccounts }

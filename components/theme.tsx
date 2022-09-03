@@ -12,7 +12,7 @@ import "@fontsource/open-sans/500.css"
 const theme = extendTheme({
     fonts: {
         heading: `Open Sans, sans-serif`,
-        body: `Raleway, sans-serif`,
+        body: `Raleway, sans-serif`
     },
     colors: {
         gray: {
@@ -24,32 +24,32 @@ const theme = extendTheme({
             600: "#616161",
             700: "#424242",
             800: "#363636",
-            900: "#212121",
+            900: "#212121"
         },
         red: {
             100: "#e63946",
             200: "#9e2a2b",
             300: "#ff7043",
-            400: "#ffab91",
+            400: "#ffab91"
         },
         white: {
             100: "#fefae0",
-            200: "#f1faee",
+            200: "#f1faee"
         },
         blue: {
             100: "#a8dadc",
             200: "#457b9d",
             300: "#1d3557",
             400: "#001d3d",
-            500: "#000814",
+            500: "#000814"
         },
         purple: {
-            100: "#ba68c8",
+            100: "#ba68c8"
         },
         fonts: {
             body: "system-ui, sans-serif",
             heading: "Georgia, serif",
-            mono: "Menlo, monospace",
+            mono: "Menlo, monospace"
         },
         fontSizes: {
             xs: "0.75rem",
@@ -64,7 +64,7 @@ const theme = extendTheme({
             "6xl": "3.75rem",
             "7xl": "4.5rem",
             "8xl": "6rem",
-            "9xl": "8rem",
+            "9xl": "8rem"
         },
         fontWeights: {
             hairline: 100,
@@ -75,7 +75,7 @@ const theme = extendTheme({
             semibold: 600,
             bold: 700,
             extrabold: 800,
-            black: 900,
+            black: 900
         },
         lineHeights: {
             normal: "normal",
@@ -84,7 +84,7 @@ const theme = extendTheme({
             short: 1.375,
             base: 1.5,
             tall: 1.625,
-            taller: "2",
+            taller: "2"
         },
         letterSpacings: {
             tighter: "-0.05em",
@@ -92,14 +92,14 @@ const theme = extendTheme({
             normal: "0",
             wide: "0.025em",
             wider: "0.05em",
-            widest: "0.1em",
+            widest: "0.1em"
         },
         breakpoints: {
             sm: "30em",
             md: "48em",
             lg: "62em",
             xl: "80em",
-            "2xl": "96em",
+            "2xl": "96em"
         },
         space: {
             px: "1px",
@@ -121,7 +121,7 @@ const theme = extendTheme({
             14: "3.5rem",
             16: "4rem",
             20: "5rem",
-            24: "6rem",
+            24: "6rem"
         },
         sizes: {
             max: "max-content",
@@ -145,8 +145,8 @@ const theme = extendTheme({
                 sm: "640px",
                 md: "768px",
                 lg: "1024px",
-                xl: "1280px",
-            },
+                xl: "1280px"
+            }
         },
         components: {
             Button: {
@@ -154,13 +154,13 @@ const theme = extendTheme({
                     link: {
                         ":focus": {
                             outline: "none",
-                            boxShadow: "none",
-                        },
-                    },
-                },
-            },
-        },
-    },
+                            boxShadow: "none"
+                        }
+                    }
+                }
+            }
+        }
+    }
 })
 
 export default theme

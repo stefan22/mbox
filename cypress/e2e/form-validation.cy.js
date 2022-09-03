@@ -1,6 +1,7 @@
 describe("Signup", () => {
     beforeEach(() => {
-        cy.visit("/signup")
+        cy.visit("http://localhost:3000/signup")
+        cy.wait(2000);
         cy.get("[data-test='user-firstname']").as("first")
         cy.get("[data-test='user-lastname']").as("last")
         cy.get("[data-test='user-email']").as("email")
@@ -15,13 +16,14 @@ describe("Signup", () => {
       });
 
     it("should return a message when missing user email", () => {
-      cy.get("[data-test='user-email']:invalid")
-      .invoke("prop","validationMessage")
-      .should("contain", "Please fill in this field.")
+        cy.wait(1000);
+        cy.get("[data-test='user-email']:invalid")
+            .invoke("prop","validationMessage")
+            .should("contain", "Please fill out this field.")
 
-      cy.get("[data-test='user-email']:invalid")
-      .invoke("prop","validity")
-      .its("valueMissing").should("be.true")
+        cy.get("[data-test='user-email']:invalid")
+            .invoke("prop","validity")
+            .its("valueMissing").should("be.true")
     })
 
 
@@ -32,13 +34,14 @@ describe("Signup", () => {
       });
 
       it("should return a message when missing user password", () => {
-        cy.get("[data-test='user-password']:invalid")
-        .invoke("prop","validationMessage")
-        .should("contain", "Please fill in this field.")
+          cy.wait(1000);
+          cy.get("[data-test='user-password']:invalid")
+            .invoke("prop","validationMessage")
+            .should("contain", "Please fill out this field.")
 
-        cy.get("[data-test='user-password']:invalid")
-        .invoke("prop","validity")
-        .its("valueMissing").should("be.true")
+          cy.get("[data-test='user-password']:invalid")
+            .invoke("prop","validity")
+            .its("valueMissing").should("be.true")
       })
 
       it("should require email to be an actual email address", () => {

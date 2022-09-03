@@ -4,11 +4,11 @@ import { validateRoute } from "../../lib/auth/validateRoute"
 export default validateRoute(async (req, res, user) => {
     const playlist = await prisma.playlist.findMany({
         where: {
-            userId: user.id,
+            userId: user.id
         },
         orderBy: {
-            name: "asc",
-        },
+            name: "asc"
+        }
     })
 
     const songs = await prisma.song.findMany({})
@@ -16,6 +16,6 @@ export default validateRoute(async (req, res, user) => {
     res.json({
         ...user,
         playlist,
-        songs,
+        songs
     })
 })
