@@ -1,2 +1,9 @@
 .github/workflows/
 node_modules/
+.next/
+.*
+.env
+.eslintrc.js
+package-lock.json
+cypress/
+
