@@ -1,12 +1,10 @@
 describe("Unauthenticated user", () => {
-    beforeEach(() => {
-        cy.visit("/")
-    })
-
-    it("should redirect user to '/signin'", () => {
-        cy.location("pathname").should("eq", "/signin")
-    })
-
+   
+      beforeEach(() => {
+       cy.visit('http://localhost:3000/signin')
+       cy.wait(1500);
+     })
+   
     it("Should have a signin form", () => {
         cy.get("form").should("exist")
     })
@@ -23,4 +21,5 @@ describe("Unauthenticated user", () => {
         cy.get("[data-test='data-submit']").should("exist")
         cy.contains("Signin")
     })
+   
 })
